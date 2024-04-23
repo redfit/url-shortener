@@ -1,6 +1,6 @@
-<%= form_with model: link do |form| %>
+<%= form_with model: link, data: { controller: "reset-form", action: "turbo:submit-end->reset-form#reset" } do |form| %>
   <div class="flex gap-2 item-center">
-    <%= form.url_field :url, placeholder: "https://example.org", class: "flex-grow rounded", required: true %>
+    <%= form.url_field :url, autofocus: true, placeholder: "https://example.org", class: "flex-grow rounded", required: true %>
     <%= form.button "Save", class: "px-3 py-2 bg-gray-100 rounded" %>
   </div>
 <% end %>
